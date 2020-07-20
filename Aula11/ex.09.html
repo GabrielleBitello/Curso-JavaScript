@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo</title>
+    <style>
+        body {
+            background-color: rgb(128, 116, 168);
+            color: rgb(10, 10, 58);
+            font: normal 14pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema de viagens</h1>
+    De onde você está acessando: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function clicar() {
+            var txtp = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var pais = String(txtp.value)
+            if (pais == 'Brasil') {
+                res.innerHTML = `<p>Você está falando do <strong>${pais}</strong>.</p>`
+                res.innerHTML += `<p> Olá, você fala em inglês?</p>`
+            } else {
+                res.innerHTML = `<p>You are speaking from <strong>${pais}</strong>.</p>`
+                res.innerHTML += `<p>Hi, do you speak portuguese?</p>`
+            }
+
+        }
+    </script>
+    <h1>Qual o seu idioma?</h1>
+    <input type="text" name="example" list="exampleList">
+    <datalist id="exampleList">
+      <option value="Português">  
+      <option value="Inglês">
+    </datalist>
+</body>
+
+</html>
